@@ -7,11 +7,36 @@
     <title>Calculator</title>
   </head>
   <body>
+    <!-- Allows you to input your method and sends it server side to the next page
+    and at the next page will give you the print out of what you plugged in and the
+    math term that you inserted as well as the overall answer -->
     <form action="http://localhost:8080/calculation" method="post">
       <input type="text" name="first" id="first" placeholder="1st Number">
       <input type="text" name="second" id="second" placeholder="2nd Number">
       <input type="text" name="math" id="math" placeholder="+, -, /, *">
-      <input type="submit" value="Submit">
+      <input type="submit" id="submit" value="Submit">
     </form>
+    <div id="outputDiv"></div>
+    <!-- Don't worry about this, this was an attempt to create the actual calculator function
+    But actually got stuck on figuring out how to create a restart button on the DOM which
+    For whatever reason I can't figure out... At all...-->
+    <!-- <form action="http://localhost:8080/calculation" method="post">
+      <input type="button" name="1" id="1" value="1">
+      <input type="button" name="2" id="2" value="2">
+      <input type="button" name="3" id="3" value="3">
+      <input type="button" name="addition" id="addition" value="+"><br>
+      <input type="button" name="4" id="4" value="4">
+      <input type="button" name="5" id="5" value="5">
+      <input type="button" name="6" id="6" value="6">
+      <input type="button" name="subtraction" id="subtraction" value="-"><br>
+      <input type="button" name="7" id="7" value="7">
+      <input type="button" name="8" id="8" value="8">
+      <input type="button" name="9" id="9" value="9">
+      <input type="button" name="multiplication" id="multiplication" value="*"><br>
+      <input type="button" name="name" value="  ">
+      <input type="button" name="0" id="0" value="0">
+      <input type="button" name="name" value="  ">
+      <input type="button" name="division" id="division" value="/">
+    </form> -->
   </body>
 </html>
