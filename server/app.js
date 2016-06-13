@@ -23,7 +23,7 @@ app.get('/', function(req, res){
 //goes to the next website to show what you inserted into the equation and gives you a
 //answer along with a print out of what you plugged in at the very beginning
 app.post('/calculation', urlencodedParser, function(req, res){
-  res.send(req.body.first + " " + req.body.math + " " + req.body.second + " = " + answer(req.body.first, req.body.second, req.body.math));
+  res.send(req.body.x + " " + req.body.m + " " + req.body.y + " = " + answer(req.body.x, req.body.y, req.body.m));
 });
 //allows you to see into the public folder without having a problem or path problems
 app.use(express.static('public'));

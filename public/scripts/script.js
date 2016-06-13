@@ -1,10 +1,19 @@
-$(document).ready(function() {
-  $('#submit').click(function () {
-    event.preventDefault();
-    start();
+$( document ).ready( function() {
+    $('#submit').on('click', function(){
+      event.preventDefault();
+      start();
+      clearForm();
     });
-  });
 });
+
+function clearForm() {
+  $('#restart').on('click', function () {
+    document.getElementById('first').value='';
+    document.getElementById('second').value='';
+    document.getElementById('math').value='';
+    document.getElementById('outputDiv').innerHTML='';
+  });
+}
 
 var processResponse = function( response )
 {
@@ -17,29 +26,28 @@ var processResponse = function( response )
   document.getElementById('outputDiv').innerHTML='';
   // append newParagraph to output
   document.getElementById('outputDiv').appendChild( newParagraph );
-}
+};
 
-function start() {
+function start(){
   var x = $('#first').val();
   var y = $('#second').val();
   var m = $('#math').val();
-
-  var inputObject = {
+  var inputObject ={
     "x": x,
     "y": y,
     "m": m
-  }
-}
-
-$.ajax({
+  };
+  console.log( inputObject );
+  // post with ajax;
+  $.ajax({
    type: "POST",
    data: inputObject,
-   url: "/",
+   url: "/calculation",
    success: function(data){
           console.log( 'post successfull: ' + data );
           // if post is successful we've received back "data"
           // send "data" to processResponse to do something with it
-          processResponse(data);
+          processResponse( data );
     },
     error: function(){
          console.log( 'error connecting to server' );
